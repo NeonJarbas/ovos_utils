@@ -1,5 +1,9 @@
 # Changelog
 
+## [V0.1.0a7](https://github.com/NeonJarbas/ovos_utils/tree/V0.1.0a7) (2024-01-05)
+
+[Full Changelog](https://github.com/NeonJarbas/ovos_utils/compare/0.0.12...V0.1.0a7)
+
 ## [0.0.12](https://github.com/NeonJarbas/ovos_utils/tree/0.0.12) (2021-11-04)
 
 [Full Changelog](https://github.com/NeonJarbas/ovos_utils/compare/25fe462e3c19a58f32dc1fd940bf7c96fc18e6de...0.0.12)
