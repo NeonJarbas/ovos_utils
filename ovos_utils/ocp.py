@@ -5,6 +5,7 @@ from enum import IntEnum
 from typing import Optional, Tuple, List, Union
 
 import orjson
+
 from ovos_utils.log import LOG, deprecated
 
 OCP_ID = "ovos.common_play"
@@ -264,9 +265,22 @@ class Playlist(list):
     skill_id: str = OCP_ID
     skill_icon: str = ""
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, *args, title: str = "",
+                 position: int = 0,
+                 length: int = 0,  # in seconds
+                 image: str = "",
+                 match_confidence: int = 0,  # 0 - 100
+                 skill_id: str = OCP_ID,
+                 skill_icon: str = ""):
         list.__init__(self, *args)
+        # TODO couldnt make super work with both list and dataclass
+        self.title = title
+        self.length = length
+        self.image = image
+        self.match_confidence = match_confidence
+        self.skill_icon = skill_icon
+        self.skill_id = skill_id
+        self.position = position
 
     @property
     def infocard(self) -> dict:
@@ -514,5 +528,3 @@ if __name__ == "__main__":
     print(p.position)
     p.set_position(1)
     print(p)  # Playlist(title='My Jams', position=1, length=0, image='', match_confidence=0, skill_id='ovos.common_play', skill_icon='')
-
-
